@@ -4,7 +4,7 @@
 void print_board(char board[3][3]);
 
 int main(void) {	
-	char board[3][3] = {'1', '2', '3', '4', '5', '6', '7', '8', '9'};
+	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
 	printf("\e[1;1H\e[2J"); // clear screen
 	print_board(board);
