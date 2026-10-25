@@ -20,6 +20,7 @@ int main(void) {
 			printf("error: invalid input\n");
 			sleep(2);
 		}
+		board[row][col] = 'O';
 	}
 
 	return 0;
@@ -37,13 +38,16 @@ int get_coordinates(int *row, int *col) {
 	int place;
 
 	printf("enter where you want to place: ");
-	scanf("%d", &place);
+
+	if(scanf("%d", &place) == -1) {
+		return 1;
+	}
 
 	if(place > 9 || place < 0)
 		return 1;
 
-	*row = place / 3 - 1;
-	*col = place % 3;
+	*row = place / 3;
+	*col = place % 3 - 1;
 
 	return 0;
 }
