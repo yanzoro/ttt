@@ -10,7 +10,7 @@ int get_coordinates(int *row, int *col);
 int main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
-	for(;;) {
+	for(int i = 0 ;; i++) {
 		int row, col; // row and columns for coordinate
 
 		printf("\e[1;1H\e[2J"); // clear screen
@@ -20,7 +20,7 @@ int main(void) {
 			printf("error: invalid input\n");
 			sleep(2);
 		}
-		board[row][col] = 'O';
+		board[row][col] = (i % 2 == 0) ? 'X' : 'O';
 	}
 
 	return 0;
