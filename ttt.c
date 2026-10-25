@@ -14,6 +14,7 @@ int main(void) {
 	print_board(board);
 
 	get_coordinates(&row, &col);
+	return 0;
 }
 
 void print_board(char board[3][3]) {
