@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 // prints the board
 void print_board(char board[3][3]);
@@ -15,7 +16,10 @@ int main(void) {
 		printf("\e[1;1H\e[2J"); // clear screen
 		print_board(board);
 
-		get_coordinates(&row, &col);
+		if(get_coordinates(&row, &col) == 1) {
+			printf("error: invalid input\n");
+			sleep(2);
+		}
 	}
 
 	return 0;
