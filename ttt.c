@@ -8,12 +8,16 @@ int get_coordinates(int *row, int *col);
 
 int main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-	int row, col; // row and columns for coordinate
 
-	printf("\e[1;1H\e[2J"); // clear screen
-	print_board(board);
+	for(;;) {
+		int row, col; // row and columns for coordinate
 
-	get_coordinates(&row, &col);
+		printf("\e[1;1H\e[2J"); // clear screen
+		print_board(board);
+
+		get_coordinates(&row, &col);
+	}
+
 	return 0;
 }
 
