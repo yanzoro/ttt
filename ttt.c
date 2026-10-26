@@ -16,6 +16,13 @@ int main(void) {
 
 		printf("\e[1;1H\e[2J"); // clear screen
 		print_board(board);
+
+		// check if tie and end game
+		if(i == 9) {
+			printf("TIE\n");
+			break;
+		}
+
 		printf("%c: ", player); // so they would know whos turn it is
 		if(get_coordinates(&row, &col) == 1) {
 			printf("error: invalid input\n");
