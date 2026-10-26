@@ -12,15 +12,16 @@ int main(void) {
 
 	for(int i = 0 ;; i++) {
 		int row, col; // row and columns for coordinate
+		char player = (i % 2 == 0) ? 'X' : 'O';
 
 		printf("\e[1;1H\e[2J"); // clear screen
 		print_board(board);
-
+		printf("%c: ", player); // so they would know whos turn it is
 		if(get_coordinates(&row, &col) == 1) {
 			printf("error: invalid input\n");
 			sleep(2);
 		}
-		board[row][col] = (i % 2 == 0) ? 'X' : 'O';
+		board[row][col] = player;
 	}
 
 	return 0;
