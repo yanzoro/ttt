@@ -10,7 +10,7 @@ int get_coordinates(int *row, int *col);
 int main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
-	for(int i = 0 ;; i++) {
+	for(int i = 0 ;;) {
 		int row, col; // row and columns for coordinate
 		char player = (i % 2 == 0) ? 'X' : 'O';
 
@@ -27,8 +27,16 @@ int main(void) {
 		if(get_coordinates(&row, &col) == 1) {
 			printf("error: invalid input\n");
 			sleep(2);
+			continue;
 		}
-		board[row][col] = player;
+
+		if(board[row][col] == 'O' || board[row][col] == 'X') {
+			printf("error: place already taken!!\n");
+			sleep(2);
+			continue;
+		}
+		else board[row][col] = player;
+		i++;
 	}
 
 	return 0;
