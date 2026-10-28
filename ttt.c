@@ -44,12 +44,18 @@ void print_board(char board[3][3]) {
 
 int get_coordinates(int *row, int *col) {
 	int place;
+	char input[100];
 
 	printf("enter where you want to place: ");
 
-	if(scanf("%d", &place) == -1) {
+	if(fgets(input, sizeof(input), stdin) == NULL) { // check if input is bad
 		return 1;
 	}
+
+	if(sscanf(input, "%d", &place) == NULL) { 
+		return 1;
+	}
+
 
 	if(place > 9 || place < 0)
 		return 1;
