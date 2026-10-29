@@ -7,6 +7,9 @@ void print_board(char board[3][3]);
 // get the coordinates from input
 int get_coordinates(int *row, int *col);
 
+// check if someone won or not and return the winners symbol
+char check_win(char board[3][3]);
+
 int main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
@@ -70,6 +73,46 @@ int get_coordinates(int *row, int *col) {
 
 	*row = place / 3;
 	*col = place % 3 - 1;
+
+	return 0;
+}
+
+char check_win(char board[3][3]) {	
+	// look away kids..
+	
+	// X
+	if(
+		// horozontal
+		(board[0][0] == 'X' || board[0][1] == 'X' || board[0][2] == 'X') ||
+		(board[1][0] == 'X' || board[1][1] == 'X' || board[1][2] == 'X') ||
+		(board[2][0] == 'X' || board[2][1] == 'X' || board[2][2] == 'X') ||
+		
+		// vertical
+		(board[0][0] == 'X' || board[1][0] == 'X' || board[2][0] == 'X') ||
+		(board[0][1] == 'X' || board[1][1] == 'X' || board[2][1] == 'X') ||
+		(board[0][2] == 'X' || board[1][2] == 'X' || board[2][2] == 'X') ||
+
+		// diagonal
+		(board[0][0] == 'X' || board[1][1] == 'X' || board[2][2] == 'X') ||
+		(board[0][2] == 'X' || board[1][1] == 'X' || board[2][0] == 'X')
+	) return 'X';
+
+	// O
+	else if(
+		// horozontal
+		(board[0][0] == 'O' || board[0][1] == 'O' || board[0][2] == 'O') ||
+		(board[1][0] == 'O' || board[1][1] == 'O' || board[1][2] == 'O') ||
+		(board[2][0] == 'O' || board[2][1] == 'O' || board[2][2] == 'O') ||
+		
+		// vertical
+		(board[0][0] == 'O' || board[1][0] == 'O' || board[2][0] == 'O') ||
+		(board[0][1] == 'O' || board[1][1] == 'O' || board[2][1] == 'O') ||
+		(board[0][2] == 'O' || board[1][2] == 'O' || board[2][2] == 'O') ||
+
+		// diagonal
+		(board[0][0] == 'O' || board[1][1] == 'O' || board[2][2] == 'O') ||
+		(board[0][2] == 'O' || board[1][1] == 'O' || board[2][0] == 'O')
+	) return 'O';
 
 	return 0;
 }
