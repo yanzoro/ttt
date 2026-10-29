@@ -26,6 +26,13 @@ int main(void) {
 			break;
 		}
 
+		// check if someone won
+		char winner = check_win(board);
+		if(winner != 0) {
+			printf("%c WON\n", winner);
+			break;
+		}
+
 		printf("%c: ", player); // so they would know whos turn it is
 		if(get_coordinates(&row, &col) == 1) {
 			printf("error: invalid input\n");
@@ -114,5 +121,5 @@ char check_win(char board[3][3]) {
 		(board[0][2] == 'O' || board[1][1] == 'O' || board[2][0] == 'O')
 	) return 'O';
 
-	return 0;
+	return 0; // return 0 if nobody won yet
 }
