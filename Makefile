@@ -6,7 +6,7 @@ ttt: ttt.c
 
 install: ttt
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	cp -f sw $(DESTDIR)$(PREFIX)/bin
+	cp -f ttt $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/ttt
 
 uninstall:
