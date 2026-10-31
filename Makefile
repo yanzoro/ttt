@@ -1,8 +1,8 @@
 CC ?= cc
 PREFIX ?= /usr/local
 
-ttt: ttt.c
-	$(CC) -Wall -Wextra ttt.c -o ttt
+ttt: src/ttt.c
+	$(CC) -Wall -Wextra src/ttt.c -o ttt
 
 install: ttt
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
