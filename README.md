@@ -20,3 +20,5 @@ this project uses the bsd-2 clause license
 ## special thanks!
 
 thank you [Com4t](https://github.com/Com4tGPU) for contributing :D
+
+![ttt screenshot](screenshots/ttt.png "screenshot of ttt")
