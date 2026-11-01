@@ -24,7 +24,8 @@ int get_coordinates(int *row, int *col);
 char check_win(char board[3][3]);
 
 int
-main(void) {	
+main(void) 
+{	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
 	for(int i = 0 ;;) {
@@ -76,7 +77,8 @@ print_board(char board[3][3]) {
 }
 
 int
-get_coordinates(int *row, int *col) {
+get_coordinates(int *row, int *col) 
+{
 	int place;
 	char input[100];
 
@@ -101,7 +103,8 @@ get_coordinates(int *row, int *col) {
 }
 
 char
-check_win(char board[3][3]) {	
+check_win(char board[3][3]) 
+{	
 	/* look away kids.. */
 	
 	/* X */
