@@ -5,7 +5,7 @@ small tic-tac-toe implementation written in c
 ## requirements
 
 * a unix-like system (linux, freebsd, etc.)
-* a compiler that supports C99 or above
+* a compiler that supports C89 or above
 * the make utility
 
 ## how to compile
