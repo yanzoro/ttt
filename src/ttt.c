@@ -47,9 +47,9 @@ get_coordinates(int *row, int *col)
 		return 1;
 	}
 
-
-	if(place > 9 || place < 0)
+	if(place > 9 || place < 0) {
 		return 1;
+	}
 
 	*row = place / 3;
 	*col = place % 3 - 1;
@@ -77,7 +77,9 @@ check_win(char board[3][3])
 		/* diagonal */
 		(board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
 		(board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
-	) return 'X';
+	) {
+		return 'X';
+	} 
 
 	/* O */
 	else if(
@@ -94,7 +96,9 @@ check_win(char board[3][3])
 		/* diagonal */
 		(board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') ||
 		(board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
-	) return 'O';
+	) {
+		return 'O';	
+	}
 
 	return 0; /* return 0 if nobody won yet */
 }
@@ -135,8 +139,9 @@ main(void)
 			printf("error: place already taken!!\n");
 			sleep(2);
 			continue;
+		} else {
+			board[row][col] = player;	
 		}
-		else board[row][col] = player;
 		i++;
 	}
 
