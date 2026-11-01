@@ -8,7 +8,7 @@ void print_board(char board[3][3]);
 int get_coordinates(int *row, int *col);
 
 // check if someone won or not and return the winners symbol
-char check_win(char board[3][3]);
+int check_win(char board[3][3]);
 
 int main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
@@ -28,13 +28,13 @@ int main(void) {
 
 		// check if someone won
 		char winner = check_win(board);
-		if(winner != 0) {
+		if(winner > 0) {
 			printf("%c WON\n", winner);
 			break;
 		}
 
 		printf("%c: ", player); // so they would know whos turn it is
-		if(get_coordinates(&row, &col) == 1) {
+		if(get_coordinates(&row, &col) < 0) {
 			printf("error: invalid input\n");
 			sleep(2);
 			continue;
@@ -67,16 +67,16 @@ int get_coordinates(int *row, int *col) {
 	printf("enter where you want to place: ");
 
 	if(fgets(input, sizeof(input), stdin) == NULL) { // check if input is bad
-		return 1;
+		return -1;
 	}
 
 	if(sscanf(input, "%d", &place) == NULL) { 
-		return 1;
+		return -1;
 	}
 
 
 	if(place > 9 || place < 0)
-		return 1;
+		return -1;
 
 	*row = place / 3;
 	*col = place % 3 - 1;
@@ -84,7 +84,7 @@ int get_coordinates(int *row, int *col) {
 	return 0;
 }
 
-char check_win(char board[3][3]) {	
+int check_win(char board[3][3]) {	
 	// look away kids..
 	
 	// X
@@ -121,5 +121,5 @@ char check_win(char board[3][3]) {
 		(board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O')
 	) return 'O';
 
-	return 0; // return 0 if nobody won yet
+	return -1; // return -1 nobody won yet
 }
