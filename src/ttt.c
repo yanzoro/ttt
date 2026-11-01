@@ -15,13 +15,13 @@
 #include <unistd.h>
 
 /* prints the board */
-void print_board(char board[3][3]);
+static void print_board(char board[3][3]);
 
 /* get the coordinates from input */
-int get_coordinates(int *row, int *col);
+static int get_coordinates(int *row, int *col);
 
 /* check if someone won or not and return the winners symbol */
-char check_win(char board[3][3]);
+static char check_win(char board[3][3]);
 
 int
 main(void) 
