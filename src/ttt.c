@@ -111,6 +111,7 @@ main(void)
 	for(i = 0;;) {
 		int row, col; /* row and columns for coordinate */
 		char player = (i % 2 == 0) ? 'X' : 'O';
+		char winner = check_win(board);
 
 		printf("\e[1;1H\e[2J"); /* clear screen */
 		print_board(board);
@@ -122,7 +123,6 @@ main(void)
 		}
 
 		/* check if someone won */
-		char winner = check_win(board);
 		if(winner != 0) {
 			printf("%c WON\n", winner);
 			break;
