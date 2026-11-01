@@ -23,7 +23,8 @@ int get_coordinates(int *row, int *col);
 /* check if someone won or not and return the winners symbol */
 char check_win(char board[3][3]);
 
-int main(void) {	
+int
+main(void) {	
 	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
 
 	for(int i = 0 ;;) {
@@ -65,7 +66,8 @@ int main(void) {
 	return 0;
 }
 
-void print_board(char board[3][3]) {
+void
+print_board(char board[3][3]) {
 	for(int i = 0; i < 3; i++) {
 		for(int j = 0; j < 3; j++)
 			printf("%c    ", board[i][j]);
@@ -73,7 +75,8 @@ void print_board(char board[3][3]) {
 	}
 }
 
-int get_coordinates(int *row, int *col) {
+int
+get_coordinates(int *row, int *col) {
 	int place;
 	char input[100];
 
@@ -97,7 +100,8 @@ int get_coordinates(int *row, int *col) {
 	return 0;
 }
 
-char check_win(char board[3][3]) {	
+char
+check_win(char board[3][3]) {	
 	/* look away kids.. */
 	
 	/* X */
