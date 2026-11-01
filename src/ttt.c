@@ -19,50 +19,6 @@ static void print_board(char board[3][3]);
 static int get_coordinates(int *row, int *col);
 static char check_win(char board[3][3]);
 
-int
-main(void) 
-{	
-	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-
-	for(int i = 0 ;;) {
-		int row, col; /* row and columns for coordinate */
-		char player = (i % 2 == 0) ? 'X' : 'O';
-
-		printf("\e[1;1H\e[2J"); /* clear screen */
-		print_board(board);
-
-		/* check if tie and end game */
-		if(i == 9) {
-			printf("TIE\n");
-			break;
-		}
-
-		/* check if someone won */
-		char winner = check_win(board);
-		if(winner != 0) {
-			printf("%c WON\n", winner);
-			break;
-		}
-
-		printf("%c: ", player); /* so they would know whos turn it is */
-		if(get_coordinates(&row, &col) == 1) {
-			printf("error: invalid input\n");
-			sleep(2);
-			continue;
-		}
-
-		if(board[row][col] == 'O' || board[row][col] == 'X') {
-			printf("error: place already taken!!\n");
-			sleep(2);
-			continue;
-		}
-		else board[row][col] = player;
-		i++;
-	}
-
-	return 0;
-}
-
 void
 print_board(char board[3][3]) {
 	for(int i = 0; i < 3; i++) {
@@ -138,4 +94,48 @@ check_win(char board[3][3])
 	) return 'O';
 
 	return 0; /* return 0 if nobody won yet */
+}
+
+int
+main(void) 
+{	
+	char board[3][3] = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+
+	for(int i = 0 ;;) {
+		int row, col; /* row and columns for coordinate */
+		char player = (i % 2 == 0) ? 'X' : 'O';
+
+		printf("\e[1;1H\e[2J"); /* clear screen */
+		print_board(board);
+
+		/* check if tie and end game */
+		if(i == 9) {
+			printf("TIE\n");
+			break;
+		}
+
+		/* check if someone won */
+		char winner = check_win(board);
+		if(winner != 0) {
+			printf("%c WON\n", winner);
+			break;
+		}
+
+		printf("%c: ", player); /* so they would know whos turn it is */
+		if(get_coordinates(&row, &col) == 1) {
+			printf("error: invalid input\n");
+			sleep(2);
+			continue;
+		}
+
+		if(board[row][col] == 'O' || board[row][col] == 'X') {
+			printf("error: place already taken!!\n");
+			sleep(2);
+			continue;
+		}
+		else board[row][col] = player;
+		i++;
+	}
+
+	return 0;
 }
