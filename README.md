@@ -15,7 +15,7 @@ to also install it on your system, run `sudo make install`. (or `doas make insta
 
 ## license
 
-this project uses the bsd-2 clause license
+this project uses the x11 license
 
 ## special thanks!
 
