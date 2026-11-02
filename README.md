@@ -17,6 +17,10 @@ to also install it on your system, run `sudo make install`. (or `doas make insta
 
 this project uses the x11 license
 
+## repositories
+
+this project is in [github](https://github.com/yanzoro/ttt) and [codeberg](https://codeberg.org/yanzoro/ttt)
+
 ## special thanks!
 
 thank you [Com4t](https://github.com/Com4tGPU) for contributing :D
