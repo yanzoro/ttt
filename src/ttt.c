@@ -2,7 +2,6 @@
  a small tic-tac-toe implementation written in c!
 
  for license details, check the LICENSE file.
-
 */
 
 #include <stdio.h>
