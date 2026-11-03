@@ -1,10 +1,4 @@
 /*
- _   _   _
- | |_| |_| |_
- | __| __| __|
- | |_| |_| |_
-  \__|\__|\__|
- 
  a small tic-tac-toe implementation written in c!
 
  for license details, check the LICENSE file.
