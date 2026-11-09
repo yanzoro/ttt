@@ -4,6 +4,7 @@
  for license details, check the LICENSE file.
 */
 
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <unistd.h>
 
