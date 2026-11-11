@@ -32,6 +32,7 @@ get_coordinates(int *row, int *col)
 	char input[100];
 
 	printf("enter where you want to place: ");
+	fflush(stdout);
 
 	if(fgets(input, sizeof(input), stdin) == NULL) { /* check if input is bad */
 		return -1;
