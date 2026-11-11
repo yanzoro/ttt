@@ -25,4 +25,4 @@ this project is in [github](https://github.com/yanzoro/ttt) and [codeberg](https
 
 thank you [Com4t](https://github.com/Com4tGPU) for contributing :D
 
-![ttt screenshot](screenshots/ttt.png "screenshot of ttt")
+![ttt screenshot](screenshots/screenshot2.png "screenshot of ttt")
