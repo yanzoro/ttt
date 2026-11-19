@@ -38,7 +38,7 @@ get_coordinates(int *row, int *col)
 		return -1;
 	}
 
-	if(sscanf(input, "%d", &place) == NULL) { 
+	if(sscanf(input, "%d", &place) < 0) { 
 		return -1;
 	}
 
